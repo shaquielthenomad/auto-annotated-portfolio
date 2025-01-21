@@ -19,7 +19,8 @@ function logEnvConfig(): void {
         console.log({
             clientIdPresent: !!process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
             siteIdPresent: !!process.env.NEXT_PUBLIC_WIX_SITE_ID,
-            apiKeyPresent: !!process.env.NEXT_PUBLIC_WIX_API_KEY
+            apiKeyPresent: !!process.env.NEXT_PUBLIC_WIX_API_KEY,
+            accountIdPresent: !!process.env.NEXT_PUBLIC_WIX_ACCOUNT_ID
         });
     }
 }
@@ -46,6 +47,9 @@ export function initializeWixClient(): WixClient {
             }),
             site: {
                 id: getRequiredEnvVar('NEXT_PUBLIC_WIX_SITE_ID')
+            },
+            account: {
+                id: getRequiredEnvVar('NEXT_PUBLIC_WIX_ACCOUNT_ID')
             }
         });
 
