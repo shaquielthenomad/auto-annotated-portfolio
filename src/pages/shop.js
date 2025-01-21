@@ -1,6 +1,5 @@
 // src/pages/shop.js
 import React, { useState, useEffect } from 'react';
-import Layout from '../components/layouts/Layout';
 import { createClient, ApiKeyStrategy } from '@wix/sdk';
 import { products } from '@wix/stores';
 
@@ -12,6 +11,7 @@ const ShopPage = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
+                // Use ApiKeyStrategy instead of OAuthStrategy
                 const wixClient = createClient({
                     auth: ApiKeyStrategy({
                         apiKey: process.env.NEXT_PUBLIC_WIX_API_KEY,
@@ -35,7 +35,6 @@ const ShopPage = () => {
     }, []);
 
     const handleAddToCart = (product) => {
-        // Placeholder for cart functionality
         console.log('Added to cart:', product);
         alert(`${product.name} added to cart!`);
     };
