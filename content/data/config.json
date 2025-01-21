@@ -41,13 +41,6 @@
                 "label": "Instagram",
                 "url": "https://instagram.com/shaquielthenomad",
                 "icon": "instagram"
-            },
-            {
-                "type": "Social",
-                "altText": "GitHub",
-                "label": "GitHub",
-                "url": "https://github.com/netlify-templates",
-                "icon": "github"
             }
         ],
         "styles": {
