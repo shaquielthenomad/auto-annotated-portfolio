@@ -27,7 +27,7 @@ export default function Layout({ children }) {
 
             <main className="flex-grow container mx-auto px-4 py-6">{children}</main>
 
-            <footer className="bg-gray-800 text-white p-4 text-center">© {new Date().getFullYear()} Shaquiel's Portfolio</footer>
+            <footer className="bg-gray-800 text-white p-4 text-center">© {new Date().getFullYear()} Shaquiel&apos;s Portfolio</footer>
         </div>
     );
 }
