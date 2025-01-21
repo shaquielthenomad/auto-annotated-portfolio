@@ -4,13 +4,10 @@ import {
     ContentObjectType,
     GlobalProps,
     PageComponentProps,
-    PostLayout,
-    ProjectLayout,
     RecentPostsSection,
     RecentProjectsSection,
     PostFeedLayout,
-    ProjectFeedLayout,
-    ContentObjectMetadata
+    ProjectFeedLayout
 } from '@/types';
 
 import { deepMapObject } from './data-utils';
@@ -18,7 +15,6 @@ import { deepMapObject } from './data-utils';
 // Extend the base ContentObject type with optional date
 type DateContentObject = ContentObject & {
     date?: string;
-    __metadata: ContentObjectMetadata;
 };
 
 export function resolveStaticProps(urlPath: string, allData: ContentObject[]): PageComponentProps {
@@ -58,13 +54,6 @@ const PropsResolvers: Partial<Record<ContentObjectType, ResolverFunction>> = {
         return {
             ...(props as RecentPostsSection),
             items: recentPosts
-        };
-    },
-    ProjectLayout: (props, allData) => {
-        const allProjects = getAllProjectsSorted(allData);
-        return {
-            ...(props as ProjectLayout),
-            relatedProjects: allProjects.slice(0, 3)
         };
     },
     ProjectFeedLayout: (props, allData) => {
