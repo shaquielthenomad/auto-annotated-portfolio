@@ -1,55 +1,70 @@
 // src/components/Annotated.tsx
-import React, { PropsWithChildren } from 'react';
-import { isDev } from '@/utils/common';
+import * as React from 'react';
+import { isDev } from '../utils/common';
 
-// Comprehensive HasAnnotation interface
+// Constants for object ID and field path attributes
+const OBJECT_ID_ATTR = 'data-sb-object-id' as const;
+const FIELD_PATH_ATTR = 'data-sb-field-path' as const;
+
+// Comprehensive HasAnnotation interface with controlled dynamic properties
 interface HasAnnotation {
   annotation?: {
     label?: string;
     description?: string;
   };
-  [key: string]: any; // Allow dynamic properties
+  [OBJECT_ID_ATTR]?: string;
+  [FIELD_PATH_ATTR]?: string;
 }
-
-// Constants for object ID and field path attributes
-const objectIdAttr = 'data-sb-object-id';
-const fieldPathAttr = 'data-sb-field-path';
 
 // Type for content-based annotation
-type AnnotatedProps = PropsWithChildren & {
+type AnnotatedProps = React.PropsWithChildren<{
   content: HasAnnotation;
-};
+}>;
 
 // Type for field-level annotation
-type AnnotatedFieldProps = PropsWithChildren & {
+type AnnotatedFieldProps = React.PropsWithChildren<{
   path: string;
-};
+}>;
 
-function annotationFromProps(props: HasAnnotation) {
-  // Safely handle dynamic properties
-  return props?.[objectIdAttr] 
-    ? { [objectIdAttr]: props[objectIdAttr] } 
-    : props?.[fieldPathAttr] 
-    ? { [fieldPathAttr]: props[fieldPathAttr] } 
-    : undefined;
+function annotationFromProps(props: HasAnnotation): Record<string, string> | undefined {
+  // Check for direct attribute assignments first
+  if (props[OBJECT_ID_ATTR]) {
+    return { [OBJECT_ID_ATTR]: props[OBJECT_ID_ATTR] };
+  }
+  
+  if (props[FIELD_PATH_ATTR]) {
+    return { [FIELD_PATH_ATTR]: props[FIELD_PATH_ATTR] };
+  }
+  
+  // Then check annotation object
+  const { annotation } = props;
+  if (annotation?.label) {
+    return { [OBJECT_ID_ATTR]: annotation.label };
+  }
+  
+  if (annotation?.description) {
+    return { [FIELD_PATH_ATTR]: annotation.description };
+  }
+  
+  return undefined;
 }
 
-const AnnotatedWrapperTag: React.FC<PropsWithChildren & { annotation: HasAnnotation }> = ({ 
+const AnnotatedWrapperTag: React.FC<React.PropsWithChildren<{ 
+  annotation: HasAnnotation 
+}>> = ({ 
   annotation, 
   children 
 }) => {
   const annotationData = annotationFromProps(annotation);
   
-  return (
-    <data {...(annotationData || {})}>
-      {children}
-    </data>
-  );
+  return React.createElement('data', annotationData || {}, children);
 };
 
-export const Annotated: React.FC<AnnotatedProps> = (props) => {
+export const Annotated: React.FC<AnnotatedProps> = (
+  props: AnnotatedProps
+): React.ReactElement => {
   const { children } = props;
-  const baseResult = <>{children}</>;
+  const baseResult = React.createElement(React.Fragment, null, children);
 
   // Development mode checks
   if (!isDev) {
@@ -68,16 +83,18 @@ export const Annotated: React.FC<AnnotatedProps> = (props) => {
 
   const annotation = annotationFromProps(props.content);
   if (annotation) {
-    return <AnnotatedWrapperTag annotation={annotation}>{props.children}</AnnotatedWrapperTag>;
+    return React.createElement(AnnotatedWrapperTag, { annotation: props.content }, props.children);
   }
 
   console.warn('Annotated: no annotation in content. Props:', props);
   return baseResult;
 };
 
-export const AnnotatedField: React.FC<AnnotatedFieldProps> = (props) => {
-  const content: HasAnnotation = { [fieldPathAttr]: props.path };
-  return <Annotated content={content}>{props.children}</Annotated>;
+export const AnnotatedField: React.FC<AnnotatedFieldProps> = (
+  props: AnnotatedFieldProps
+): React.ReactElement => {
+  const content: HasAnnotation = { [FIELD_PATH_ATTR]: props.path };
+  return React.createElement(Annotated, { content }, props.children);
 };
 
 export default Annotated;

@@ -4,10 +4,10 @@
     "scripts": {
         "lint": "next lint",
         "dev": "next dev",
-         "type-check": "tsc --noEmit",
-          "prebuild": "npm run type-check",
-           "build": "next build",
-            "start": "next start"
+        "type-check": "tsc --noEmit",
+        "prebuild": "npm run type-check",
+        "build": "next build",
+        "start": "next start"
     },
     "dependencies": {
         "@wix/bookings": "^1.0.548",
@@ -36,6 +36,7 @@
     "devDependencies": {
         "@stackbit/cms-git": "^1.0.17",
         "@stackbit/types": "^2.1.11",
+        "@types/classnames": "^2.3.0",
         "@types/glob": "^8.1.0",
         "@types/node": "^22.10.7",
         "@types/react": "^19.0.7",
