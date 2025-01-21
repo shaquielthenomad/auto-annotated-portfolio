@@ -78,7 +78,7 @@
             "type": "ContactBlock",
             "title": "Contact details",
             "phoneNumber": "",
-            "phoneAltText": "My phone number",
+            "phoneAltText": "",
             "email": "hello@shaquiel.com",
             "emailAltText": "My email",
             "address": "Cape Town 🇿🇦 | Bangkok 🇹🇭 | Barcelona 🇪🇸",
