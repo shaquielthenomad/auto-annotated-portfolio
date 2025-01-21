@@ -1,8 +1,8 @@
-// src/lib/wix-client.ts
 import { createClient, WixClient } from '@wix/sdk';
 import { OAuthStrategy } from '@wix/sdk';
 import { stores } from '@wix/stores';
 import { site } from '@wix/site-stores';
+import { account } from '@wix/account';
 
 // Improved type safety for environment variables
 function getRequiredEnvVar(name: string): string {
@@ -37,7 +37,7 @@ export function initializeWixClient(): WixClient {
         logEnvConfig();
         
         _wixClient = createClient({
-            modules: [stores, site],
+            modules: [stores, site, account],
             auth: OAuthStrategy({
                 clientId: getRequiredEnvVar('NEXT_PUBLIC_WIX_CLIENT_ID'),
                 tokens: {
