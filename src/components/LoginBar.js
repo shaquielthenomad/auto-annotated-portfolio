@@ -6,7 +6,7 @@ import { members } from '@wix/members';
 const myWixClient = createClient({
     modules: { members },
     auth: OAuthStrategy({
-        clientId: process.env.WIX_CLIENT_ID,
+        clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
         tokens: JSON.parse(Cookies.get('session') || null)
     })
 });

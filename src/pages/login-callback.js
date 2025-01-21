@@ -1,4 +1,3 @@
-// src/pages/login-callback.js
 import Cookies from 'js-cookie';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
@@ -10,10 +9,8 @@ export default function LoginCallback() {
     const [errorMessage, setErrorMessage] = useState(null);
 
     async function verifyLogin() {
-        // Ensure this only runs on the client-side
         if (typeof window === 'undefined') return;
 
-        // Retrieve and clear redirect data
         const data = localStorage.getItem('oauthRedirectData') ? JSON.parse(localStorage.getItem('oauthRedirectData')) : {};
         localStorage.removeItem('oauthRedirectData');
 
@@ -25,10 +22,8 @@ export default function LoginCallback() {
         });
 
         try {
-            // Parse authentication parameters from URL
             const { code, state } = myWixClient.auth.parseFromUrl();
 
-            // Implement exponential backoff for token retrieval
             let tokens;
             let attempts = 0;
             const maxAttempts = 3;
@@ -42,7 +37,6 @@ export default function LoginCallback() {
                     }
                 } catch (retryError) {
                     attempts++;
-                    // Exponential backoff
                     await new Promise((resolve) => setTimeout(resolve, Math.pow(2, attempts) * 1000));
                 }
             }
@@ -51,13 +45,11 @@ export default function LoginCallback() {
                 throw new Error('Failed to retrieve authentication tokens');
             }
 
-            // Securely store tokens
             Cookies.set('session', JSON.stringify(tokens), {
                 secure: process.env.NODE_ENV === 'production',
                 sameSite: 'strict'
             });
 
-            // Redirect to original or default page
             router.push(data?.originalUri || '/');
         } catch (e) {
             console.error('Login verification error:', e);
