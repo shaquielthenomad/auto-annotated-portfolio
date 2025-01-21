@@ -1,6 +1,6 @@
 // src/components/molecules/ImageBlock/index.tsx
 import React from 'react';
-import Image, { ImageProps, StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import classNames from 'classnames';
 
 // Define the HasAnnotation type

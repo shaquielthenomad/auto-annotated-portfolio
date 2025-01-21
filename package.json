@@ -4,8 +4,10 @@
     "scripts": {
         "lint": "next lint",
         "dev": "next dev",
-        "build": "next build",
-        "start": "next start"
+         "type-check": "tsc --noEmit",
+          "prebuild": "npm run type-check",
+           "build": "next build",
+            "start": "next start"
     },
     "dependencies": {
         "@wix/bookings": "^1.0.548",
