@@ -14,7 +14,7 @@ sections:
     colors: colors-f
     backgroundSize: full
     title: >-
-      Hi, i'm shaquiel.I’m a developer, digital artist, consultant and a bunch
+      Hi, i'm shaquiel. I’m a developer, digital artist, consultant and a bunch
       of other impressive titles and buzz words.
     subtitle: >-
       This is my info—I’m sharing it all this with ya’ll to impress you with all
