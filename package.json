@@ -2,6 +2,7 @@
     "name": "personal-site",
     "version": "0.2.0",
     "scripts": {
+        "lint": "next lint",
         "dev": "next dev",
         "build": "next build",
         "start": "next start"
@@ -15,6 +16,8 @@
         "@wix/pricing-plans": "^1.0.116",
         "@wix/redirects": "^1.0.70",
         "@wix/sdk": "^1.15.9",
+        "@wix/site-stores": "^1.15.0",
+        "@wix/site-window": "^1.23.0",
         "@wix/stores": "^1.0.346",
         "classnames": "^2.5.1",
         "dayjs": "^1.11.11",
