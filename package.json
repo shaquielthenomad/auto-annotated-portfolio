@@ -7,9 +7,20 @@
         "start": "next start"
     },
     "dependencies": {
+        "@wix/bookings": "^1.0.548",
+        "@wix/data": "^1.0.184",
+        "@wix/ecom": "^1.0.896",
+        "@wix/events": "^1.0.397",
+        "@wix/members": "^1.0.159",
+        "@wix/pricing-plans": "^1.0.116",
+        "@wix/redirects": "^1.0.70",
+        "@wix/sdk": "^1.15.9",
+        "@wix/stores": "^1.0.346",
         "classnames": "^2.5.1",
         "dayjs": "^1.11.11",
+        "dotenv": "^16.4.7",
         "front-matter": "^4.0.2",
+        "js-cookie": "^3.0.5",
         "markdown-to-jsx": "^7.7.1",
         "next": "^15.1.0",
         "react": "^19.0.0",
@@ -18,7 +29,7 @@
         "tailwindcss": "^3.4.13"
     },
     "devDependencies": {
-        "@stackbit/cms-git": "^1.0.30",
+        "@stackbit/cms-git": "^1.0.17",
         "@stackbit/types": "^2.1.11",
         "@types/glob": "^8.1.0",
         "@types/react": "^19.0.1",

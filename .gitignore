@@ -36,3 +36,7 @@ yarn-error.log*
 # IDE
 *.code-workspace
 .idea
+
+# Local Netlify folder
+.netlify
+.env
