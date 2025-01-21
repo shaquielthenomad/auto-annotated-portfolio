@@ -72,6 +72,16 @@
                 "label": "Instagram",
                 "url": "https://instagram.com/shaquielthenomad",
                 "altText": "My Instagram"
+            },
+            {
+                "type": "Link",
+                "label": "Learn more",
+                "altText": "",
+                "url": "/shop",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": ""
             }
         ],
         "contacts": {
