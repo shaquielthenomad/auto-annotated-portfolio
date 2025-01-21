@@ -77,7 +77,7 @@
         "contacts": {
             "type": "ContactBlock",
             "title": "Contact details",
-            "phoneNumber": "850-123-5021",
+            "phoneNumber": "+66618989002",
             "phoneAltText": "My phone number",
             "email": "hello@shaquiel.com",
             "emailAltText": "My email",
