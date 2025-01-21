@@ -22,6 +22,16 @@
                 "type": "Link",
                 "label": "Blog",
                 "url": "/blog"
+            },
+            {
+                "type": "Link",
+                "label": "Learn more",
+                "altText": "",
+                "url": "https://instagram.com/shaquielthenomad",
+                "showIcon": false,
+                "icon": "arrowRight",
+                "iconPosition": "right",
+                "elementId": ""
             }
         ],
         "socialLinks": [
