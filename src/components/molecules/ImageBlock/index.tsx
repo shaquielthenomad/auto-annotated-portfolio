@@ -1,21 +1,19 @@
 // src/components/molecules/ImageBlock/index.tsx
 import React from 'react';
-import Image from 'next/image';
+import Image, { ImageProps, StaticImageData } from 'next/image';
 import classNames from 'classnames';
 
-// Define the HasAnnotation type with more flexibility
+// Define the HasAnnotation type
 interface HasAnnotation {
   annotation?: {
     label?: string;
     description?: string;
-    [key: string]: any;
   };
-  [key: string]: any;
 }
 
 // Update ImageBlockProps to extend HasAnnotation
 interface ImageBlockProps extends HasAnnotation, React.HTMLAttributes<HTMLDivElement> {
-  url?: string | null;
+  url?: string | StaticImageData;
   alt?: string;
   width?: number;
   height?: number;
@@ -23,8 +21,6 @@ interface ImageBlockProps extends HasAnnotation, React.HTMLAttributes<HTMLDivEle
   sizes?: string;
   style?: React.CSSProperties;
   className?: string;
-  'data-sb-object-id'?: string;
-  'data-sb-field-path'?: string;
 }
 
 export default function ImageBlock(props: ImageBlockProps) {
@@ -41,13 +37,10 @@ export default function ImageBlock(props: ImageBlockProps) {
     ...divProps
   } = props;
 
-  // More robust URL handling
-  if (!url || url.trim() === '') {
+  // Handle cases where URL is not provided
+  if (!url) {
     return null;
   }
-
-  // Fallback for blurDataURL
-  const blurPlaceholder = `data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`;
 
   return (
     <div 
@@ -58,17 +51,17 @@ export default function ImageBlock(props: ImageBlockProps) {
     >
       <Image
         src={url}
-        alt={alt || annotation?.description || 'Image'}
+        alt={alt || annotation?.description || ''}
         width={width}
         height={height}
         priority={priority}
         sizes={sizes}
         className="object-cover"
         placeholder="blur"
-        blurDataURL={blurPlaceholder}
-        onError={(e) => {
+        blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
+        onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
           console.error('Image loading error:', e);
-          e.currentTarget.src = blurPlaceholder; // Fallback to placeholder
+          // Additional error handling if needed
         }}
       />
       {annotation?.description && (
