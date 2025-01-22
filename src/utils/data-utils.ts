@@ -6,7 +6,7 @@ export function deepMapObject(value: any, visitorFn: VisitorFunction) {
             return deepMapObject(e, visitorFn);
         });
     } else if (typeof value == 'object') {
-        const newObject = {};
+        const newObject: Record<string, any> = {};
         for (const [k, v] of Object.entries(value)) {
             newObject[k] = deepMapObject(v, visitorFn);
         }

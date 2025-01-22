@@ -3,12 +3,9 @@ import path from 'path';
 import glob from 'glob';
 import frontmatter from 'front-matter';
 import { allModels } from '.stackbit/models';
-import * as types from '@/types';
-import { isDev } from './common';
 import { PAGE_MODEL_NAMES, PageModelType } from '@/types/generated';
 
 const contentBaseDir = 'content';
-const pagesBaseDir = contentBaseDir + '/pages';
 
 const allReferenceFields: { [key: string]: boolean } = {};
 allModels.forEach((model) => {
@@ -58,14 +55,11 @@ function readContent(file: string): types.ContentObject {
 function resolveReferences(content: types.ContentObject, fileToContent: Record<string, types.ContentObject>) {
     if (!content || !content.type) return;
 
-    const modelName = content.type;
-    if (!content.__metadata) content.__metadata = { modelName };
-
     for (const fieldName in content) {
         let fieldValue = content[fieldName];
         if (!fieldValue) continue;
 
-        const isRef = isRefField(modelName, fieldName);
+        const isRef = isRefField(content.type, fieldName);
         if (Array.isArray(fieldValue)) {
             if (fieldValue.length === 0) continue;
             if (isRef && typeof fieldValue[0] === 'string') {
@@ -89,12 +83,12 @@ function resolveReferences(content: types.ContentObject, fileToContent: Record<s
 
 function contentUrl(obj: types.ContentObject): string | undefined {
     const fileName = obj.__metadata.id;
-    if (!fileName.startsWith(pagesBaseDir)) {
-        console.warn('Content file', fileName, 'expected to be a page, but is not under', pagesBaseDir);
+    if (!fileName.startsWith(contentBaseDir + '/pages')) {
+        console.warn('Content file', fileName, 'expected to be a page, but is not under', contentBaseDir + '/pages');
         return;
     }
 
-    let url = fileName.slice(pagesBaseDir.length);
+    let url = fileName.slice((contentBaseDir + '/pages').length);
     url = url.split('.')[0];
     if (url.endsWith('/index')) {
         url = url.slice(0, -6) || '/';
@@ -131,7 +125,7 @@ const skipList = ['__metadata'];
 const logAnnotations = false;
 
 function annotateContentObject(o: any, prefix = '', depth = 0) {
-    if (!isDev || !o || typeof o !== 'object' || !o.type || skipList.includes(prefix)) return;
+    if (!o || typeof o !== 'object' || !o.type || skipList.includes(prefix)) return;
 
     const depthPrefix = '--'.repeat(depth);
     if (depth === 0) {

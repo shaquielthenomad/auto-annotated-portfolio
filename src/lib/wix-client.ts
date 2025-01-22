@@ -1,4 +1,3 @@
-// src/lib/wix-client.ts
 import { createClient, WixClient } from '@wix/sdk';
 import { members } from '@wix/members';
 import { redirects } from '@wix/redirects';
@@ -26,7 +25,6 @@ function logEnvConfig(): void {
 let _wixClient: WixClient | null = null;
 
 type AccessToken = string;
-type RefreshToken = string;
 
 // Initialize Wix client with comprehensive error handling
 export function initializeWixClient(): WixClient {
@@ -43,7 +41,7 @@ export function initializeWixClient(): WixClient {
             },
             auth: {
                 accessToken: getRequiredEnvVar('WIX_ACCESS_TOKEN') as AccessToken,
-                refreshToken: getRequiredEnvVar('WIX_REFRESH_TOKEN') as RefreshToken
+                refreshToken: getRequiredEnvVar('WIX_REFRESH_TOKEN') as string
             }
         });
 
