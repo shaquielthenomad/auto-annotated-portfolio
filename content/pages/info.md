@@ -188,7 +188,7 @@ sections:
       - type: Label
         label: COMMUNICATION
       - type: Label
-        label: PAY PER CLICK
+        label: PAID ADS
       - type: Label
         label: CREATIVITY
       - type: Label
