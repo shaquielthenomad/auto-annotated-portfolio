@@ -69,7 +69,7 @@ sections:
       - type: ImageBlock
         url: /images/bioplus-white-logo-header.png
         altText: Bioplus Energy
-        caption: Logo three
+        caption: Bioplus
       - type: ImageBlock
         url: /images/logo4.svg
         altText: Logo four
