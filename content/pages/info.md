@@ -63,7 +63,7 @@ sections:
         altText: Shell Fuel
         caption: Shell
       - type: ImageBlock
-        url: /images/logo2.svg
+        url: /images/yoco_main_white_CMYK-1200x732.png
         altText: Logo two
         caption: Logo two
       - type: ImageBlock
