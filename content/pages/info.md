@@ -178,21 +178,22 @@ sections:
     subtitle: 'Skills:'
     items:
       - type: Label
-        label: 'WEB 1, 2, 3'
+        label: LEADERSHIP
       - type: Label
-        label: React
+        label: ANALYTICS
       - type: Label
-        label: Microsoft Office
+        label: SEO
       - type: Label
-        label: Next.js
+        label: COMMUNICATION
       - type: Label
-        label: Netlify
+        label: PAID ADS
       - type: Label
-        label: Pancakes
+        label: CREATIVITY
       - type: Label
-        label: C++
+        label: STRATEGY
       - type: Label
-        label: Swift
+        label: TRAVEL
+        url: ''
   - type: DividerSection
     styles:
       self:
@@ -210,7 +211,7 @@ sections:
     subtitle: 'Contact:'
     colors: colors-f
     text: |
-      [thisismyemail.@myemail.me](mailto:thisismyemail.@myemail.me)
+      <hello@shaquiel.com>
   - type: DividerSection
     styles:
       self:
