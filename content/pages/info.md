@@ -77,7 +77,7 @@ sections:
       - type: ImageBlock
         url: /images/harbour.space.png
         altText: harbour.space
-        caption: Caption of the image
+        caption: harbour.space
         elementId: ''
     spacing: 3
     columns: 5
