@@ -71,7 +71,7 @@ sections:
         altText: Bioplus Energy
         caption: Bioplus
       - type: ImageBlock
-        url: /images/logo4.svg
+        url: /images/Notion logo.png
         altText: Logo four
         caption: Logo four
       - type: ImageBlock
