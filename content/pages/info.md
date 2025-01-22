@@ -229,7 +229,7 @@ sections:
     items:
       - type: FeaturedItem
         subtitle: 'Experience:'
-        text: "**Current**\n\n*   Advisor at [Hey Partner! ](https://heypartner.online)- Personal Planning & Concierge (Cape Town \U0001F1FF\U0001F1E6)\n\n**2024**\n\n*   Performance Marketing Specialist at [fileAi](https://www.file.ai/) (Singapore \U0001F1F8\U0001F1EC)\n\n**2023**\n\n*   Marketing Specialist at [Panthera Group  ](https://panthera-group.com/about/)(Thailand \U0001F1F9\U0001F1ED)\n\n**2015**\n\n*   senior front-end at this place\n\n**2013**\n\n*   intern developer at a big company\n\n**2011**\n\n*   flipping burgers\n\n"
+        text: "**Current**\n\n*   Advisor at [Hey Partner! ](https://heypartner.online)- Personal Planning & Concierge (Cape Town \U0001F1FF\U0001F1E6)\n\n**2024**\n\n*   Performance Marketing Specialist at [fileAi](https://www.file.ai/) (Singapore \U0001F1F8\U0001F1EC)\n\n**2023**\n\n*   Marketing Specialist at [Panthera Group  ](https://panthera-group.com/about/)(Thailand \U0001F1F9\U0001F1ED)\n\n"
         styles:
           self:
             textAlign: left
