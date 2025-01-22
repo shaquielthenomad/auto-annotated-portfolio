@@ -64,7 +64,7 @@ sections:
         caption: Shell
       - type: ImageBlock
         url: /images/yoco_main_white_CMYK-1200x732.png
-        altText: Logo two
+        altText: Yoco Payments
         caption: Logo two
       - type: ImageBlock
         url: /images/logo3.svg
