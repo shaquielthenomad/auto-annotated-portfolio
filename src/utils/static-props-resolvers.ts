@@ -4,30 +4,32 @@ import {
     ContentObjectType,
     GlobalProps,
     PageComponentProps,
-    PostLayout,
-    ProjectLayout,
     RecentPostsSection,
     RecentProjectsSection,
     PostFeedLayout,
     ProjectFeedLayout
 } from '@/types';
+
 import { deepMapObject } from './data-utils';
-import { ConfigModel } from '.stackbit/models/Config';
+
+// Extend the base ContentObject type with optional date
+type DateContentObject = ContentObject & {
+    date?: string;
+};
 
 export function resolveStaticProps(urlPath: string, allData: ContentObject[]): PageComponentProps {
     const originalPage = allData.find((obj) => obj.__metadata.urlPath === urlPath);
     const globalProps: GlobalProps = {
-        site: allData.find((obj) => obj.__metadata.modelName === ConfigModel.name) as Config
+        site: allData.find((obj) => obj.__metadata.modelName === 'Config') as Config
     };
 
     function enrichContent(value: any) {
-        const type = value?.__metadata?.modelName;
-        if (type && PropsResolvers[type]) {
+        if (value && typeof value === 'object' && value.__metadata?.modelName) {
+            const type = value.__metadata.modelName as ContentObjectType;
             const resolver = PropsResolvers[type];
-            return resolver(value, allData);
-        } else {
-            return value;
+            return resolver ? resolver(value, allData) : value;
         }
+        return value;
     }
 
     const enrichedPage = deepMapObject(originalPage, enrichContent) as ContentObject;
@@ -50,20 +52,8 @@ const PropsResolvers: Partial<Record<ContentObjectType, ResolverFunction>> = {
     RecentPostsSection: (props, allData) => {
         const recentPosts = getAllPostsSorted(allData).slice(0, (props as RecentPostsSection).recentCount || 3);
         return {
-            ...props,
-            posts: recentPosts
-        };
-    },
-    ProjectLayout: (props, allData) => {
-        const allProjects = getAllProjectsSorted(allData);
-        const currentProjectId = props.__metadata?.id;
-        const currentProjectIndex = allProjects.findIndex((project) => project.__metadata?.id === currentProjectId);
-        const nextProject = currentProjectIndex > 0 ? allProjects[currentProjectIndex - 1] : null;
-        const prevProject = currentProjectIndex < allProjects.length - 1 ? allProjects[currentProjectIndex + 1] : null;
-        return {
-            ...props,
-            prevProject,
-            nextProject
+            ...(props as RecentPostsSection),
+            items: recentPosts
         };
     },
     ProjectFeedLayout: (props, allData) => {
@@ -76,20 +66,20 @@ const PropsResolvers: Partial<Record<ContentObjectType, ResolverFunction>> = {
     RecentProjectsSection: (props, allData) => {
         const recentProjects = getAllProjectsSorted(allData).slice(0, (props as RecentProjectsSection).recentCount || 3);
         return {
-            ...props,
-            projects: recentProjects
+            ...(props as RecentProjectsSection),
+            items: recentProjects
         };
     }
 };
 
 function getAllPostsSorted(objects: ContentObject[]) {
-    const all = objects.filter((object) => object.__metadata?.modelName === 'PostLayout') as PostLayout[];
-    const sorted = all.sort((postA, postB) => new Date(postB.date).getTime() - new Date(postA.date).getTime());
-    return sorted;
+    return (objects as DateContentObject[])
+        .filter((obj) => obj.__metadata.modelName === 'Post' && obj.date)
+        .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
 }
 
 function getAllProjectsSorted(objects: ContentObject[]) {
-    const all = objects.filter((object) => object.__metadata?.modelName === 'ProjectLayout') as ProjectLayout[];
-    const sorted = all.sort((projectA, projectB) => new Date(projectB.date).getTime() - new Date(projectA.date).getTime());
-    return sorted;
+    return (objects as DateContentObject[])
+        .filter((obj) => obj.__metadata.modelName === 'Project' && obj.date)
+        .sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
 }

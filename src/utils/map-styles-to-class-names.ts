@@ -1,4 +1,8 @@
-const TAILWIND_MAP = {
+type TailwindMapValue = {
+    [key: string]: string;
+} | ((value: any) => string);
+
+const TAILWIND_MAP: Record<string, TailwindMapValue> = {
     alignItems: {
         'flex-start': 'items-start',
         'flex-end': 'items-end',
@@ -61,7 +65,7 @@ const TAILWIND_MAP = {
         'flex-end': 'justify-end',
         center: 'justify-center'
     },
-    margin: function (value) {
+    margin: (value: any) => {
         // for tailwind margins - ['twt0:16', 'twb0:16'], the value will be array ['mt-0', 'mb-4']
         if (Array.isArray(value)) {
             return value.join(' ');
@@ -71,7 +75,7 @@ const TAILWIND_MAP = {
         console.warn('cannot convert "margin" style field value to class name');
         return '';
     },
-    padding: function (value) {
+    padding: (value: any) => {
         // for tailwind paddings - ['twt0:16', 'twb0:16'], the value will be array ['pt-0', 'pb-4']
         if (Array.isArray(value)) {
             return value.join(' ');
@@ -98,20 +102,21 @@ const TAILWIND_MAP = {
     }
 };
 
-export function mapStylesToClassNames(styles: Record<string, any>) {
+export function mapStylesToClassNames(styles: Record<string, any>): string {
     return Object.entries(styles)
         .map(([prop, value]) => {
-            if (prop in TAILWIND_MAP) {
-                if (typeof TAILWIND_MAP[prop] === 'function') {
-                    return TAILWIND_MAP[prop](value);
-                } else if (value in TAILWIND_MAP[prop]) {
-                    return TAILWIND_MAP[prop][value];
+            const mapEntry = TAILWIND_MAP[prop];
+            if (mapEntry) {
+                if (typeof mapEntry === 'function') {
+                    return mapEntry(value);
+                } else if (typeof value === 'string' && value in mapEntry) {
+                    return mapEntry[value];
                 }
-            } else {
-                // if prop or value don't exist in the map, use the value as is,
-                // useful for direct color values.
-                return value;
             }
+            // if prop or value don't exist in the map, use the value as is,
+            // useful for direct color values.
+            return value;
         })
+        .filter(Boolean)
         .join(' ');
 }
