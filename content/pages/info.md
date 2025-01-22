@@ -137,6 +137,8 @@ sections:
             textAlign: left
         title: Instagram
         subtitle: ''
+        text: |
+          @shaquieltthenomad
     columns: 3
     spacingX: 120
     spacingY: 0
