@@ -61,7 +61,7 @@ sections:
       - type: ImageBlock
         url: /images/Shell.png
         altText: Shell Fuel
-        caption: Logo one
+        caption: Shell
       - type: ImageBlock
         url: /images/logo2.svg
         altText: Logo two
