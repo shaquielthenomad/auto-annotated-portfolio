@@ -67,7 +67,7 @@ sections:
         altText: Yoco Payments
         caption: Yoco
       - type: ImageBlock
-        url: /images/logo3.svg
+        url: /images/bioplus-white-logo-header.png
         altText: Logo three
         caption: Logo three
       - type: ImageBlock
