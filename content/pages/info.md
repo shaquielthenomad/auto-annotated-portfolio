@@ -72,7 +72,7 @@ sections:
         caption: Bioplus
       - type: ImageBlock
         url: /images/Notion logo.png
-        altText: Logo four
+        altText: Notion
         caption: Logo four
       - type: ImageBlock
         url: /images/harbour.space.png
