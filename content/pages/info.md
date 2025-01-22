@@ -178,7 +178,7 @@ sections:
     subtitle: 'Skills:'
     items:
       - type: Label
-        label: 'WEB 1, 2, 3'
+        label: Leadership
       - type: Label
         label: React
       - type: Label
