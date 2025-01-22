@@ -59,7 +59,7 @@ sections:
     subtitle: 'I worked with these folks:'
     images:
       - type: ImageBlock
-        url: /images/Shaquiel Sewell.png
+        url: /images/Shell.png
         altText: Logo one
         caption: Logo one
       - type: ImageBlock
