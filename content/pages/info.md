@@ -164,6 +164,7 @@ sections:
         styles:
           self:
             textAlign: left
+        title: Instagram
     columns: 3
     spacingX: 120
     spacingY: 0
