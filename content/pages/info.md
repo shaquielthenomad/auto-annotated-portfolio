@@ -17,7 +17,7 @@ sections:
     media:
       type: ImageBlock
       url: /images/Shaquiel Sewell.png
-      altText: Hero image
+      altText: Shaquiel Sewell
     styles:
       self:
         height: auto
