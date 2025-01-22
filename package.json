@@ -14,7 +14,7 @@
         "@wix/data": "^1.0.184",
         "@wix/ecom": "^1.0.896",
         "@wix/events": "^1.0.397",
-        "@wix/members": "^1.0.159",
+        "@wix/members": "^1.0.162",
         "@wix/pricing-plans": "^1.0.116",
         "@wix/redirects": "^1.0.70",
         "@wix/sdk": "^1.15.9",
@@ -28,7 +28,7 @@
         "js-cookie": "^3.0.5",
         "markdown-to-jsx": "^7.7.1",
         "next": "^15.1.5",
-        "react": "^19.0.0-rc.0",
+        "react": "^19.0.0",
         "react-dom": "^19.0.0-rc.0",
         "react-syntax-highlighter": "^15.6.1",
         "tailwindcss": "^3.4.13"
@@ -47,6 +47,7 @@
         "js-yaml": "^4.1.0",
         "postcss": "^8.4.47",
         "prettier": "^3.0.0",
+        "sass": "^1.72.0",
         "typescript": "^5.7.3"
     },
     "license": "MIT",
