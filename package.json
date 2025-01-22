@@ -7,6 +7,8 @@
         "start": "next start"
     },
     "dependencies": {
+        "@wix/members": "^1.0.162",
+        "@wix/sdk": "^1.15.9",
         "classnames": "^2.5.1",
         "dayjs": "^1.11.11",
         "front-matter": "^4.0.2",
