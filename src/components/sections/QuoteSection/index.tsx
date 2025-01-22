@@ -5,11 +5,13 @@ import classNames from 'classnames';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import Section from '../Section';
 
-// Define an interface for the component props
+// Define a union type for valid color schemes
+type ColorScheme = 'colors-a' | 'colors-b' | 'colors-c' | 'colors-d' | 'colors-e' | 'colors-f';
+
 interface QuoteSectionProps {
     type?: string;
     elementId?: string;
-    colors?: Record<string, string>;
+    colors?: ColorScheme;
     quote?: string;
     name?: string;
     title?: string;
