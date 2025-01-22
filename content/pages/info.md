@@ -60,7 +60,7 @@ sections:
     images:
       - type: ImageBlock
         url: /images/Shell.png
-        altText: Logo one
+        altText: Shell Fuel
         caption: Logo one
       - type: ImageBlock
         url: /images/logo2.svg
