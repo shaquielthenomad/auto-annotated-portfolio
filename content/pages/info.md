@@ -135,7 +135,7 @@ sections:
         styles:
           self:
             textAlign: left
-        title: ''
+        title: Instagram
         subtitle: ''
     columns: 3
     spacingX: 120
