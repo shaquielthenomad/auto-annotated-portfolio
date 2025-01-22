@@ -59,17 +59,17 @@ sections:
     subtitle: 'I worked with these folks:'
     images:
       - type: ImageBlock
-        url: /images/logo1.svg
-        altText: Logo one
-        caption: Logo one
+        url: /images/Shell.png
+        altText: Shell Fuel
+        caption: Shell
       - type: ImageBlock
-        url: /images/logo2.svg
-        altText: Logo two
-        caption: Logo two
+        url: /images/yoco_main_white_CMYK-1200x732.png
+        altText: Yoco Payments
+        caption: Yoco
       - type: ImageBlock
-        url: /images/logo3.svg
-        altText: Logo three
-        caption: Logo three
+        url: /images/bioplus-white-logo-header.png
+        altText: Bioplus Energy
+        caption: Bioplus
       - type: ImageBlock
         url: /images/logo4.svg
         altText: Logo four
