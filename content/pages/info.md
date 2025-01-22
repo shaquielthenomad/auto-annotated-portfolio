@@ -59,8 +59,7 @@ sections:
     subtitle: 'I worked with these folks:'
     images:
       - type: ImageBlock
-        url: >-
-          /images/png-clipart-computer-icons-legends-of-atlantis-html-logo-shell-logo-angle-white.png
+        url: /images/Shaquiel Sewell.png
         altText: Logo one
         caption: Logo one
       - type: ImageBlock
