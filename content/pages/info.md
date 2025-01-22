@@ -13,11 +13,7 @@ sections:
   - elementId: ''
     colors: colors-f
     backgroundSize: full
-    text: >-
-      ## Hey I’m a developer. I’ve been born and raised in the world, and that’s
-      also where I’m based. I’m currently a free agent, ex-this, ex-that,
-      ex-super big name. When I’m not coding, writing or creating, I eat
-      cereals. I have a dog, check her out [@mygod](https://www.stackbit.com/).
+    text: "## Hey, I’m Shaquiel. Born in South Africa \U0001F1FF\U0001F1E6, now based in Bangkok \U0001F1F9\U0001F1ED.\n\n## I’m a business strategist, marketer, and global explorer. I’ve worked with brands worldwide, diving into everything from paid ads to data analytics. When I’m not strategizing, I’m soaking in the views, learning new languages, and building connections. \n\n## Currently changing the world with [@heypartner](https://heypartner.online).\n\n"
     media:
       type: ImageBlock
       url: /images/about.jpg
@@ -123,51 +119,26 @@ sections:
       - type: FeaturedItem
         actions:
           - type: Link
-            label: GitHub
-            url: 'https://github.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Twitter
-            url: 'https://twitter.com/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
             label: LinkedIn
-            url: 'https://www.linkedin.com/'
+            url: 'https://www.linkedin.com/in/shaquiel-sewell/'
         styles:
           self:
             textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: CodePen
-            url: 'https://codepen.io/'
-        styles:
-          self:
-            textAlign: left
-      - type: FeaturedItem
-        actions:
-          - type: Link
-            label: Discord
-            url: 'https://discord.com/'
-        styles:
-          self:
-            textAlign: left
+        title: Linkedin
+        text: |
+          Shaquiel Sewell
       - type: FeaturedItem
         actions:
           - type: Link
             label: Instagram
-            url: 'https://www.instagram.com/'
+            url: 'https://www.instagram.com/shaquielthenomad'
         styles:
           self:
             textAlign: left
+        title: Instagram
+        subtitle: ''
+        text: |
+          @shaquielthenomad
     columns: 3
     spacingX: 120
     spacingY: 0
