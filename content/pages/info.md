@@ -13,7 +13,7 @@ sections:
   - elementId: ''
     colors: colors-f
     backgroundSize: full
-    text: "## Hey, I’m Shaquiel. Born in South Africa \U0001F1FF\U0001F1E6, now based in Bangkok \U0001F1F9\U0001F1ED.\n\n## I’m a business strategist, marketer, and global explorer. I’ve worked with brands worldwide, diving into everything from paid ads to data analytics. When I’m not strategizing, I’m soaking in the views, learning new languages, and building connections. \n\n## Currently changing the world with [@heypartner](https://heypartner.online).\n\n"
+    text: "## Hey, I’m Shaquiel. Born in South Africa \U0001F1FF\U0001F1E6, now based in Bangkok \U0001F1F9\U0001F1ED.\n\n## I’m a business strategist, marketer, and global explorer. \n\n## When I’m not strategizing, I’m soaking in the views, learning new languages, and building connections.\n\n## Currently changing the world with [@heypartner](https://heypartner.online).\n\n"
     media:
       type: ImageBlock
       url: /images/Shaquiel Sewell.png
