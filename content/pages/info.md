@@ -188,7 +188,7 @@ sections:
       - type: Label
         label: COMMUNICATION
       - type: Label
-        label: PPC
+        label: PAY PER CLICK
       - type: Label
         label: C++
       - type: Label
