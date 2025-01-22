@@ -5,7 +5,23 @@ import classNames from 'classnames';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import Section from '../Section';
 
-export default function QuoteSection(props) {
+// Define an interface for the component props
+interface QuoteSectionProps {
+    type?: string;
+    elementId?: string;
+    colors?: Record<string, string>;
+    quote?: string;
+    name?: string;
+    title?: string;
+    styles?: {
+        self?: Record<string, string>;
+        quote?: Record<string, string>;
+        name?: Record<string, string>;
+        title?: Record<string, string>;
+    };
+}
+
+export default function QuoteSection(props: QuoteSectionProps) {
     const { type, elementId, colors, quote, name, title, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
