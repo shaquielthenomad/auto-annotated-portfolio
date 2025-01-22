@@ -192,7 +192,7 @@ sections:
       - type: Label
         label: CREATIVITY
       - type: Label
-        label: Swift
+        label: STRATEGY
   - type: DividerSection
     styles:
       self:
