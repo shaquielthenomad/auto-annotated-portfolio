@@ -5,7 +5,7 @@
         "type": "Header",
         "headerVariant": "variant-c",
         "isSticky": false,
-        "title": "Shaquiel",
+        "title": "Personal",
         "isTitleVisible": true,
         "primaryLinks": [
             {
@@ -22,43 +22,22 @@
                 "type": "Link",
                 "label": "Blog",
                 "url": "/blog"
-            },
-            {
-                "type": "Link",
-                "label": "Instagram",
-                "altText": "",
-                "url": "https://instagram.com/shaquielthenomad",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "elementId": ""
-            },
-            {
-                "type": "Link",
-                "label": "Learn more",
-                "altText": "",
-                "url": "/shop",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "elementId": ""
             }
         ],
         "socialLinks": [
             {
                 "type": "Social",
-                "altText": "Instagram",
-                "label": "Instagram",
-                "url": "https://instagram.com/shaquielthenomad",
-                "icon": "instagram"
+                "altText": "Twitter",
+                "label": "Twitter",
+                "url": "https://twitter.com/netlify",
+                "icon": "twitter"
             },
             {
                 "type": "Social",
-                "label": "Facebook",
-                "altText": "",
-                "url": "https://www.linkedin.com/in/shaquiel-sewell/",
-                "icon": "linkedin",
-                "elementId": ""
+                "altText": "GitHub",
+                "label": "GitHub",
+                "url": "https://github.com/netlify-templates",
+                "icon": "github"
             }
         ],
         "styles": {
@@ -90,41 +69,26 @@
             },
             {
                 "type": "Link",
-                "label": "Instagram",
-                "url": "https://instagram.com/shaquielthenomad",
-                "altText": "My Instagram"
-            },
-            {
-                "type": "Link",
-                "label": "Shop",
-                "altText": "",
-                "url": "/shop",
-                "showIcon": false,
-                "icon": "arrowRight",
-                "iconPosition": "right",
-                "elementId": ""
+                "label": "GitHub",
+                "url": "https://github.com/netlify-templates",
+                "altText": "Netlify templates"
             }
         ],
         "contacts": {
             "type": "ContactBlock",
             "title": "Contact details",
-            "phoneNumber": "",
-            "phoneAltText": "",
-            "email": "hello@shaquiel.com",
+            "phoneNumber": "850-123-5021",
+            "phoneAltText": "My phone number",
+            "email": "thisismyemail.@myemail.me",
             "emailAltText": "My email",
-            "address": "Cape Town 🇿🇦 | Bangkok 🇹🇭 | Barcelona 🇪🇸",
+            "address": "312 Lovely Street, Brooklyn, NY, 123456",
             "addressAltText": "My address"
         },
-        "copyrightText": "made with ❤️ by shaquiel & [hey partner!](heypartner.online)\n",
+        "copyrightText": "Powered by [Netlify](https://www.netlify.com/)",
         "styles": {
             "self": {
                 "width": "narrow",
-                "padding": [
-                    "pt-16",
-                    "pb-16",
-                    "pr-4",
-                    "pl-4"
-                ]
+                "padding": ["pt-16", "pb-16", "pr-4", "pl-4"]
             }
         }
     }

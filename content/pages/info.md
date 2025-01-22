@@ -13,11 +13,15 @@ sections:
   - elementId: ''
     colors: colors-f
     backgroundSize: full
-    text: "## Hey, I’m Shaquiel. Born in South Africa \U0001F1FF\U0001F1E6, now based in Bangkok \U0001F1F9\U0001F1ED.\n\n## I’m a business strategist, marketer, and global explorer. \n\n## When I’m not strategizing, I’m soaking in the views, learning new languages, and building connections.\n\n## Currently changing the world with [@heypartner](https://heypartner.online).\n\n"
+    text: >-
+      ## Hey I’m a developer. I’ve been born and raised in the world, and that’s
+      also where I’m based. I’m currently a free agent, ex-this, ex-that,
+      ex-super big name. When I’m not coding, writing or creating, I eat
+      cereals. I have a dog, check her out [@mygod](https://www.stackbit.com/).
     media:
       type: ImageBlock
-      altText: Shaquiel Sewell
-      url: /images/Picture of Shaquiel Sewell.png
+      url: /images/about.jpg
+      altText: Hero image
     styles:
       self:
         height: auto
@@ -59,26 +63,25 @@ sections:
     subtitle: 'I worked with these folks:'
     images:
       - type: ImageBlock
-        url: /images/Shell.png
-        altText: Shell Fuel
-        caption: Shell
+        url: /images/logo1.svg
+        altText: Logo one
+        caption: Logo one
       - type: ImageBlock
-        url: /images/yoco_main_white_CMYK-1200x732.png
-        altText: Yoco Payments
-        caption: Yoco
+        url: /images/logo2.svg
+        altText: Logo two
+        caption: Logo two
       - type: ImageBlock
-        url: /images/Panthera.png
-        altText: Bioplus Energy
-        caption: Bioplus
+        url: /images/logo3.svg
+        altText: Logo three
+        caption: Logo three
       - type: ImageBlock
-        url: /images/Notion logo.png
-        altText: Notion
-        caption: Notion
+        url: /images/logo4.svg
+        altText: Logo four
+        caption: Logo four
       - type: ImageBlock
-        url: /images/harbour.space.png
-        altText: harbour.space
-        caption: harbour.space
-        elementId: ''
+        url: /images/logo5.svg
+        altText: Logo five
+        caption: Logo five
     spacing: 3
     columns: 5
     aspectRatio: auto
@@ -120,26 +123,51 @@ sections:
       - type: FeaturedItem
         actions:
           - type: Link
-            label: LinkedIn
-            url: 'https://www.linkedin.com/in/shaquiel-sewell/'
+            label: GitHub
+            url: 'https://github.com/'
         styles:
           self:
             textAlign: left
-        title: Linkedin
-        text: |
-          Shaquiel Sewell
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: Twitter
+            url: 'https://twitter.com/'
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: LinkedIn
+            url: 'https://www.linkedin.com/'
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: CodePen
+            url: 'https://codepen.io/'
+        styles:
+          self:
+            textAlign: left
+      - type: FeaturedItem
+        actions:
+          - type: Link
+            label: Discord
+            url: 'https://discord.com/'
+        styles:
+          self:
+            textAlign: left
       - type: FeaturedItem
         actions:
           - type: Link
             label: Instagram
-            url: 'https://www.instagram.com/shaquielthenomad'
+            url: 'https://www.instagram.com/'
         styles:
           self:
             textAlign: left
-        title: Instagram
-        subtitle: ''
-        text: |
-          @shaquielthenomad
     columns: 3
     spacingX: 120
     spacingY: 0
@@ -179,22 +207,21 @@ sections:
     subtitle: 'Skills:'
     items:
       - type: Label
-        label: LEADERSHIP
+        label: 'WEB 1, 2, 3'
       - type: Label
-        label: ANALYTICS
+        label: React
       - type: Label
-        label: SEO
+        label: Microsoft Office
       - type: Label
-        label: COMMUNICATION
+        label: Next.js
       - type: Label
-        label: PAID ADS
+        label: Netlify
       - type: Label
-        label: CREATIVITY
+        label: Pancakes
       - type: Label
-        label: STRATEGY
+        label: C++
       - type: Label
-        label: TRAVEL
-        url: ''
+        label: Swift
   - type: DividerSection
     styles:
       self:
@@ -212,7 +239,7 @@ sections:
     subtitle: 'Contact:'
     colors: colors-f
     text: |
-      <hello@shaquiel.com>
+      [thisismyemail.@myemail.me](mailto:thisismyemail.@myemail.me)
   - type: DividerSection
     styles:
       self:
@@ -230,7 +257,26 @@ sections:
     items:
       - type: FeaturedItem
         subtitle: 'Experience:'
-        text: "**Current**\n\n*   Advisor at [Hey Partner! ](https://heypartner.online)- Personal Planning & Concierge (Cape Town \U0001F1FF\U0001F1E6)\n\n**2024**\n\n*   Performance Marketing Specialist at [fileAi](https://www.file.ai/) (Singapore \U0001F1F8\U0001F1EC)\n\n**2023**\n\n*   Marketing Specialist at [Panthera Group  ](https://panthera-group.com/about/)(Thailand \U0001F1F9\U0001F1ED)\n\n"
+        text: |-
+          **Current**
+
+          * freelance @freelance.me
+
+          **2018-2021**
+
+          * fullstack at this startup
+
+          **2015**
+
+          * senior front-end at this place
+
+          **2013**
+
+          * intern developer at a big company
+
+          **2011**
+
+          * flipping burgers
         styles:
           self:
             textAlign: left
@@ -241,7 +287,18 @@ sections:
               - pr-0
       - type: FeaturedItem
         subtitle: 'Education:'
-        text: "**2022-2025**\n\n*   Bachelor of Business Administration (BBA), High Tech Entrepreneurship,[ University of the Thai Chamber of Commerce ](https://utcc.ac.th)(Thailand \U0001F1F9\U0001F1ED)\n\n"
+        text: |-
+          **2015-2018**
+
+          * ba computer sciense at a semi fancy school
+
+          **2014**
+
+          * react certificate somewhere
+
+          **2011**
+
+          * my highschool
         styles:
           self:
             textAlign: left

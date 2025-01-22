@@ -4,45 +4,15 @@ import Link from '../Link';
 import { iconMap } from '../../svgs';
 import { Annotated } from '@/components/Annotated';
 
-interface SVGProps {
-  className?: string;
-}
-
-interface ActionProps {
-  type: 'Link' | 'Button';
-  elementId?: string;
-  className?: string;
-  label?: string;
-  altText?: string;
-  url?: string;
-  showIcon?: boolean;
-  icon?: keyof typeof iconMap;
-  iconPosition?: 'left' | 'right';
-  style?: 'primary' | 'secondary';
-}
-
-export default function Action(props: ActionProps): React.ReactElement | null {
-    const { 
-        type, 
-        elementId, 
-        className, 
-        label, 
-        altText, 
-        url = '', 
-        showIcon = false, 
-        icon, 
-        iconPosition = 'right', 
-        style = 'primary' 
-    } = props;
-
+export default function Action(props) {
+    const { type, elementId, className, label, altText, url, showIcon, icon, iconPosition = 'right', style = 'primary' } = props;
     const IconComponent = icon ? iconMap[icon] : null;
-
     return (
         <Annotated content={props}>
             <Link
                 href={url}
                 aria-label={altText}
-                id={elementId}
+                id={elementId || null}
                 className={classNames(
                     'sb-component',
                     'sb-component-block',
