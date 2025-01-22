@@ -190,7 +190,7 @@ sections:
       - type: Label
         label: PAY PER CLICK
       - type: Label
-        label: C++
+        label: CREATIVITY
       - type: Label
         label: Swift
   - type: DividerSection
