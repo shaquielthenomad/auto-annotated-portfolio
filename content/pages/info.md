@@ -59,7 +59,8 @@ sections:
     subtitle: 'I worked with these folks:'
     images:
       - type: ImageBlock
-        url: /images/Shell-Emblem.png
+        url: >-
+          /images/png-clipart-computer-icons-legends-of-atlantis-html-logo-shell-logo-angle-white.png
         altText: Logo one
         caption: Logo one
       - type: ImageBlock
