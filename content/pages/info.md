@@ -240,14 +240,7 @@ sections:
               - pr-0
       - type: FeaturedItem
         subtitle: 'Education:'
-        text: >+
-          **2022-2025**
-
-
-          *   Bachelor of Business Administration (BBA), High Tech
-          Entrepreneurship,[ University of the Thai Chamber of
-          Commerce](https://utcc.ac.th)
-
+        text: "**2022-2025**\n\n*   Bachelor of Business Administration (BBA), High Tech Entrepreneurship,[ University of the Thai Chamber of Commerce ](https://utcc.ac.th)(Thailand \U0001F1F9\U0001F1ED)\n\n"
         styles:
           self:
             textAlign: left
