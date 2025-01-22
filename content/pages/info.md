@@ -182,8 +182,6 @@ sections:
       - type: Label
         label: ANALYTICS
       - type: Label
-        label: EMPATHY
-      - type: Label
         label: SEO
       - type: Label
         label: COMMUNICATION
