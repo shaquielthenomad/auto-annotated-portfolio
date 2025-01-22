@@ -229,26 +229,7 @@ sections:
     items:
       - type: FeaturedItem
         subtitle: 'Experience:'
-        text: |-
-          **Current**
-
-          * freelance @freelance.me
-
-          **2018-2021**
-
-          * fullstack at this startup
-
-          **2015**
-
-          * senior front-end at this place
-
-          **2013**
-
-          * intern developer at a big company
-
-          **2011**
-
-          * flipping burgers
+        text: "**Current**\n\n*   Advisor at [Hey Partner! ](https://heypartner.online)- Personal Planning & Concierge (Cape Town \U0001F1FF\U0001F1E6)\n\n**2024**\n\n*   Performance Marketing Specialist at [fileAi](https://www.file.ai/) (Singapore \U0001F1F8\U0001F1EC)\n\n**2023**\n\n*   Marketing Specialist at [Panthera Group  ](https://panthera-group.com/about/)(Thailand \U0001F1F9\U0001F1ED)\n\n"
         styles:
           self:
             textAlign: left
@@ -259,18 +240,7 @@ sections:
               - pr-0
       - type: FeaturedItem
         subtitle: 'Education:'
-        text: |-
-          **2015-2018**
-
-          * ba computer sciense at a semi fancy school
-
-          **2014**
-
-          * react certificate somewhere
-
-          **2011**
-
-          * my highschool
+        text: "**2022-2025**\n\n*   Bachelor of Business Administration (BBA), High Tech Entrepreneurship,[ University of the Thai Chamber of Commerce ](https://utcc.ac.th)(Thailand \U0001F1F9\U0001F1ED)\n\n"
         styles:
           self:
             textAlign: left
