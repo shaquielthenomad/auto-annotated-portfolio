@@ -14,7 +14,7 @@ sections:
     colors: colors-f
     backgroundSize: full
     text: >+
-      Hey, I’m Shaquiel. Born in South Africa, now based in Bangkok, I’m a
+      ## Hey, I’m Shaquiel. Born in South Africa, now based in Bangkok, I’m a
       business strategist, marketer, and global explorer. I’ve worked with
       brands worldwide, diving into everything from paid ads to data analytics.
       When I’m not strategizing, I’m soaking in the views, learning new
