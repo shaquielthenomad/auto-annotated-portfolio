@@ -1,4 +1,6 @@
 import PostFeedSection from '../PostFeedSection';
-export default function FeaturedPostSection(props) {
+import { PostFeedSectionProps } from '../PostFeedSection';
+
+export default function FeaturedPostSection(props: PostFeedSectionProps) {
     return <PostFeedSection {...props} />;
 }

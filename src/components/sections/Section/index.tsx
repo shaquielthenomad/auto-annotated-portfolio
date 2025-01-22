@@ -24,7 +24,7 @@ function SectionInset(props: SectionProps) {
     const classSuffix = type && type.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
     return (
         <div
-            id={elementId || null}
+            id={elementId || undefined}
             className={classNames(
                 'sb-component',
                 'sb-component-section',
@@ -50,7 +50,7 @@ function SectionInset(props: SectionProps) {
                     styles.borderRadius ? mapStyles({ borderRadius: styles.borderRadius }) : null
                 )}
                 style={{
-                    borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : null
+                    borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : undefined
                 }}
             >
                 <div className="relative w-full">{children}</div>
@@ -64,7 +64,7 @@ function SectionFullWidth(props: SectionProps) {
     const classSuffix = type && type.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
     return (
         <div
-            id={elementId || null}
+            id={elementId || undefined}
             className={classNames(
                 'sb-component',
                 'sb-component-section',
@@ -81,7 +81,7 @@ function SectionFullWidth(props: SectionProps) {
                 styles.borderRadius ? mapStyles({ borderRadius: styles.borderRadius }) : null
             )}
             style={{
-                borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : null
+                borderWidth: styles.borderWidth ? `${styles.borderWidth}px` : undefined
             }}
         >
             <div className={classNames('flex', 'w-full', mapStyles({ justifyContent: styles.justifyContent ?? 'center' }))}>

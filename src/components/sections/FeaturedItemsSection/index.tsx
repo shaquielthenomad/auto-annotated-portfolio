@@ -6,7 +6,26 @@ import Section from '../Section';
 import Action from '../../atoms/Action';
 import FeaturedItem from './FeaturedItem';
 
-export default function FeaturedItemsSection(props) {
+interface FeaturedItemsSectionProps {
+    type?: string;
+    elementId?: string;
+    colors?: string;
+    title?: string;
+    subtitle?: string;
+    actions?: any[];
+    items?: any[];
+    columns?: number;
+    spacingX?: number;
+    spacingY?: number;
+    styles?: any;
+}
+
+interface FeaturedItemsActionsProps {
+    actions?: any[];
+    styles?: any;
+}
+
+export default function FeaturedItemsSection(props: FeaturedItemsSectionProps) {
     const { type, elementId, colors, title, subtitle, actions = [], items = [], columns = 3, spacingX = 16, spacingY = 16, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
@@ -26,8 +45,8 @@ export default function FeaturedItemsSection(props) {
                         'mt-12': title || subtitle
                     })}
                     style={{
-                        columnGap: spacingX ? `${spacingX}px` : null,
-                        rowGap: spacingY ? `${spacingY}px` : null
+                        columnGap: spacingX ? `${spacingX}px` : undefined,
+                        rowGap: spacingY ? `${spacingY}px` : undefined
                     }}
                 >
                     {items.map((item, index) => (
@@ -40,7 +59,7 @@ export default function FeaturedItemsSection(props) {
     );
 }
 
-function FeaturedItemsActions(props) {
+function FeaturedItemsActions(props: FeaturedItemsActionsProps) {
     const { actions = [], styles = {} } = props;
     if (actions.length === 0) {
         return null;
@@ -56,7 +75,7 @@ function FeaturedItemsActions(props) {
     );
 }
 
-function mapColStyles(columns) {
+function mapColStyles(columns: number) {
     switch (columns) {
         case 4:
             return 'md:grid-cols-4';

@@ -1,4 +1,6 @@
 import ProjectFeedSection from '../ProjectFeedSection';
-export default function FeaturedProjectsSection(props) {
+import { ProjectFeedSectionProps } from '../ProjectFeedSection';
+
+export default function FeaturedProjectsSection(props: ProjectFeedSectionProps) {
     return <ProjectFeedSection {...props} />;
 }

@@ -8,7 +8,69 @@ import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import ArrowUpRightIcon from '../../svgs/arrow-up-right';
 
-export default function PostFeedSection(props) {
+interface PostFeedSectionProps {
+    type?: string;
+    elementId?: string;
+    colors?: string;
+    variant?: string;
+    title?: string;
+    subtitle?: string;
+    actions?: any[];
+    posts?: any[];
+    showDate?: boolean;
+    showAuthor?: boolean;
+    showExcerpt?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    styles?: any;
+}
+
+interface PostFeedActionsProps {
+    actions?: any[];
+    styles?: any;
+}
+
+interface PostFeedVariantsProps {
+    variant?: string;
+    posts?: any[];
+    showDate?: boolean;
+    showAuthor?: boolean;
+    showExcerpt?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    hasTopMargin?: boolean;
+}
+
+interface PostsVariantABCProps {
+    variant?: string;
+    posts?: any[];
+    showDate?: boolean;
+    showAuthor?: boolean;
+    showExcerpt?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    hasTopMargin?: boolean;
+}
+
+interface PostsVariantDProps {
+    posts?: any[];
+    showDate?: boolean;
+    showAuthor?: boolean;
+    showExcerpt?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    hasTopMargin?: boolean;
+}
+
+interface PostAttributionProps {
+    showDate?: boolean;
+    showAuthor?: boolean;
+    date?: string;
+    author?: any;
+    className?: string;
+}
+
+export default function PostFeedSection(props: PostFeedSectionProps) {
     const {
         type,
         elementId,
@@ -46,7 +108,7 @@ export default function PostFeedSection(props) {
     );
 }
 
-function PostFeedActions(props) {
+function PostFeedActions(props: PostFeedActionsProps) {
     const { actions = [], styles = {} } = props;
     if (actions.length === 0) {
         return null;
@@ -62,7 +124,7 @@ function PostFeedActions(props) {
     );
 }
 
-function PostFeedVariants(props) {
+function PostFeedVariants(props: PostFeedVariantsProps) {
     const { variant = 'variant-a' } = props;
     switch (variant) {
         case 'variant-a':
@@ -76,7 +138,7 @@ function PostFeedVariants(props) {
     }
 }
 
-function PostsVariantABC(props) {
+function PostsVariantABC(props: PostsVariantABCProps) {
     const { variant = 'variant-a', posts = [], showDate, showAuthor, showExcerpt, showFeaturedImage, showReadMoreLink, hasTopMargin } = props;
     if (posts.length === 0) {
         return null;
@@ -120,7 +182,7 @@ function PostsVariantABC(props) {
     );
 }
 
-function PostsVariantD(props) {
+function PostsVariantD(props: PostsVariantDProps) {
     const { posts = [], showDate, showAuthor, showExcerpt, showFeaturedImage, showReadMoreLink, hasTopMargin } = props;
     if (posts.length === 0) {
         return null;
@@ -166,7 +228,7 @@ function PostsVariantD(props) {
     );
 }
 
-function PostAttribution({ showDate, showAuthor, date, author, className = '' }) {
+function PostAttribution({ showDate, showAuthor, date, author, className = '' }: PostAttributionProps) {
     if (!showDate && !(showAuthor && author)) {
         return null;
     }

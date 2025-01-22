@@ -6,16 +6,39 @@ import { mapStylesToClassNames as mapStyles } from '../../../../utils/map-styles
 import Action from '../../../atoms/Action';
 import ImageBlock from '../../../molecules/ImageBlock';
 
-export default function FeaturedItem(props) {
+interface FeaturedItemProps {
+    elementId?: string;
+    title?: string;
+    subtitle?: string;
+    text?: string;
+    featuredImage?: any;
+    actions?: any[];
+    styles?: {
+        self?: {
+            borderWidth?: number;
+            [key: string]: any;
+        };
+        title?: any;
+        subtitle?: any;
+    };
+}
+
+interface ItemActionsProps {
+    actions?: any[];
+    textAlign?: string;
+    hasTopMargin?: boolean;
+}
+
+export default function FeaturedItem(props: FeaturedItemProps) {
     const { elementId, title, subtitle, text, featuredImage, actions = [], styles = {} } = props;
     const { self = {} } = styles;
     const { borderWidth, ...otherSelfStyles } = self;
     return (
         <article
-            id={elementId || null}
+            id={elementId || undefined}
             className={classNames('sb-component', 'sb-component-block', 'sb-component-item', mapStyles(otherSelfStyles))}
             style={{
-                borderWidth: borderWidth ? `${borderWidth}px` : null
+                borderWidth: borderWidth ? `${borderWidth}px` : undefined
             }}
         >
             {featuredImage && (
@@ -40,7 +63,7 @@ export default function FeaturedItem(props) {
     );
 }
 
-function ItemActions(props) {
+function ItemActions(props: ItemActionsProps) {
     const { actions = [], textAlign, hasTopMargin } = props;
     if (actions.length === 0) {
         return null;

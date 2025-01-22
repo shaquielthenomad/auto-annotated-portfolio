@@ -103,7 +103,7 @@ function MediaGalleryImage(props: MediaGalleryItemProps) {
     );
 }
 
-function mapAspectRatioStyles(aspectRatio) {
+function mapAspectRatioStyles(aspectRatio: string) {
     switch (aspectRatio) {
         case '1:1':
             return 'pt-1/1';
@@ -122,7 +122,7 @@ function mapAspectRatioStyles(aspectRatio) {
     }
 }
 
-function mapColStyles(columns) {
+function mapColStyles(columns: number) {
     switch (columns) {
         case 2:
             return 'grid-cols-2';

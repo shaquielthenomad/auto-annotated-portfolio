@@ -5,7 +5,33 @@ import classNames from 'classnames';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import Section from '../Section';
 
-export default function TextSection(props) {
+interface TextSectionProps {
+    type?: string;
+    elementId?: string;
+    colors?: string;
+    variant?: string;
+    title?: string;
+    subtitle?: string;
+    text?: string;
+    styles?: any;
+}
+
+interface TextBodyVariantsProps {
+    variant?: string;
+    title?: string;
+    subtitle?: string;
+    text?: string;
+    styles?: any;
+}
+
+interface TextBodyVariantProps {
+    title?: string;
+    subtitle?: string;
+    text?: string;
+    styles?: any;
+}
+
+export default function TextSection(props: TextSectionProps) {
     const { type, elementId, colors, variant, title, subtitle, text, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
@@ -14,7 +40,7 @@ export default function TextSection(props) {
     );
 }
 
-function TextBodyVariants(props) {
+function TextBodyVariants(props: TextBodyVariantsProps) {
     const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
         case 'variant-a':
@@ -26,7 +52,7 @@ function TextBodyVariants(props) {
     }
 }
 
-function TextBodyVariantA(props) {
+function TextBodyVariantA(props: TextBodyVariantProps) {
     const { title, subtitle, text, styles = {} } = props;
     return (
         <div>
@@ -48,7 +74,7 @@ function TextBodyVariantA(props) {
     );
 }
 
-function TextBodyVariantB(props) {
+function TextBodyVariantB(props: TextBodyVariantProps) {
     const { title, subtitle, text, styles = {} } = props;
     return (
         <div className="flex flex-wrap">

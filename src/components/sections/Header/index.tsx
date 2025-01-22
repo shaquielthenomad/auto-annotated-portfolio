@@ -8,7 +8,18 @@ import ImageBlock from '../../molecules/ImageBlock';
 import CloseIcon from '../../svgs/close';
 import MenuIcon from '../../svgs/menu';
 
-export default function Header(props) {
+interface HeaderProps {
+    headerVariant: 'variant-a' | 'variant-b' | 'variant-c';
+    isSticky?: boolean;
+    title?: string;
+    isTitleVisible?: boolean;
+    logo?: any;
+    primaryLinks?: any[];
+    socialLinks?: any[];
+    styles?: any;
+}
+
+export default function Header(props: HeaderProps) {
     const { headerVariant, isSticky, title, isTitleVisible, logo, primaryLinks = [], socialLinks = [], styles = {} } = props;
     const headerWidth = styles.self?.width ?? 'narrow';
     return (
@@ -35,7 +46,16 @@ export default function Header(props) {
     );
 }
 
-function HeaderVariants(props) {
+interface HeaderVariantsProps {
+    variant: 'variant-a' | 'variant-b' | 'variant-c';
+    title?: string;
+    isTitleVisible?: boolean;
+    logo?: any;
+    primaryLinks?: any[];
+    socialLinks?: any[];
+}
+
+function HeaderVariants(props: HeaderVariantsProps) {
     const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
         case 'variant-a':
@@ -49,7 +69,15 @@ function HeaderVariants(props) {
     }
 }
 
-function HeaderVariantA(props) {
+interface HeaderVariantProps {
+    title?: string;
+    isTitleVisible?: boolean;
+    logo?: any;
+    primaryLinks?: any[];
+    socialLinks?: any[];
+}
+
+function HeaderVariantA(props: HeaderVariantProps) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
         <div className="flex items-stretch relative">
@@ -69,7 +97,7 @@ function HeaderVariantA(props) {
     );
 }
 
-function HeaderVariantB(props) {
+function HeaderVariantB(props: HeaderVariantProps) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
         <div className="flex items-stretch relative">
@@ -93,7 +121,7 @@ function HeaderVariantB(props) {
     );
 }
 
-function HeaderVariantC(props) {
+function HeaderVariantC(props: HeaderVariantProps) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     return (
         <div className="flex items-stretch relative">
@@ -117,7 +145,15 @@ function HeaderVariantC(props) {
     );
 }
 
-function MobileMenu(props) {
+interface MobileMenuProps {
+    primaryLinks?: any[];
+    socialLinks?: any[];
+    title?: string;
+    isTitleVisible?: boolean;
+    logo?: any;
+}
+
+function MobileMenu(props: MobileMenuProps) {
     const { primaryLinks = [], socialLinks = [], ...logoProps } = props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const router = useRouter();
@@ -169,7 +205,13 @@ function MobileMenu(props) {
     );
 }
 
-function SiteLogoLink({ title, isTitleVisible, logo }) {
+interface SiteLogoLinkProps {
+    title?: string;
+    isTitleVisible?: boolean;
+    logo?: any;
+}
+
+function SiteLogoLink({ title, isTitleVisible, logo }: SiteLogoLinkProps) {
     if (!(logo || (title && isTitleVisible))) {
         return null;
     }
@@ -183,7 +225,12 @@ function SiteLogoLink({ title, isTitleVisible, logo }) {
     );
 }
 
-function ListOfLinks({ links, inMobileMenu }) {
+interface ListOfLinksProps {
+    links: any[];
+    inMobileMenu: boolean;
+}
+
+function ListOfLinks({ links, inMobileMenu }: ListOfLinksProps) {
     return links.map((link, index) => (
         <li key={index} className={classNames(inMobileMenu ? 'text-center w-full' : 'inline-flex items-stretch')}>
             <Action
@@ -194,7 +241,12 @@ function ListOfLinks({ links, inMobileMenu }) {
     ));
 }
 
-function ListOfSocialLinks({ links, inMobileMenu = false }) {
+interface ListOfSocialLinksProps {
+    links: any[];
+    inMobileMenu?: boolean;
+}
+
+function ListOfSocialLinks({ links, inMobileMenu = false }: ListOfSocialLinksProps) {
     return links.map((link, index) => (
         <li key={index} className={classNames(inMobileMenu ? 'border border-current -ml-px -mt-px' : 'inline-flex items-stretch')}>
             <Social {...link} className={classNames('sb-component-social-fill', 'text-base', inMobileMenu ? 'p-5' : 'p-4')} />
@@ -202,7 +254,7 @@ function ListOfSocialLinks({ links, inMobileMenu = false }) {
     ));
 }
 
-function mapMaxWidthStyles(width) {
+function mapMaxWidthStyles(width: string) {
     switch (width) {
         case 'narrow':
             return 'max-w-7xl';

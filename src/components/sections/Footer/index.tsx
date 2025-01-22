@@ -3,7 +3,25 @@ import Markdown from 'markdown-to-jsx';
 import classNames from 'classnames';
 import { Action } from '../../atoms';
 
-export default function Footer(props) {
+interface FooterProps {
+    primaryLinks?: any[];
+    contacts?: any;
+    copyrightText?: string;
+    styles?: any;
+}
+
+interface ContactsProps {
+    phoneNumber?: string;
+    phoneAltText?: string;
+    email?: string;
+    emailAltText?: string;
+    address?: string;
+    addressAltText?: string;
+    elementId?: string;
+    className?: string;
+}
+
+export default function Footer(props: FooterProps) {
     const { primaryLinks = [], contacts, copyrightText, styles = {} } = props;
     return (
         <footer className={classNames('sb-component', 'sb-component-footer', styles.self?.padding ?? 'py-16 px-4')}>
@@ -12,7 +30,7 @@ export default function Footer(props) {
                     {primaryLinks.length > 0 && (
                         <div className={classNames('mt-6', contacts ? 'w-full' : 'md:mr-auto')}>
                             <ul className="flex flex-wrap max-w-5xl text-lg">
-                                {primaryLinks.map((link, index) => (
+                                {primaryLinks.map((link: any, index: number) => (
                                     <li key={index} className="mr-8 mt-2">
                                         <Action {...link} />
                                     </li>
@@ -50,10 +68,10 @@ export default function Footer(props) {
     );
 }
 
-function Contacts(props) {
+function Contacts(props: ContactsProps) {
     const { phoneNumber, phoneAltText, email, emailAltText, address, addressAltText, elementId, className } = props;
     return (
-        <div id={elementId || null} className={className}>
+        <div id={elementId || undefined} className={className}>
             {phoneNumber && (
                 <p>
                     <a className="underline hover:no-underline" href={`tel:${phoneNumber}`} aria-label={phoneAltText}>
@@ -85,7 +103,7 @@ function Contacts(props) {
     );
 }
 
-function mapMaxWidthStyles(width) {
+function mapMaxWidthStyles(width: string) {
     switch (width) {
         case 'narrow':
             return 'max-w-7xl';

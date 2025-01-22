@@ -8,7 +8,61 @@ import { Link, Action } from '../../atoms';
 import ImageBlock from '../../molecules/ImageBlock';
 import ArrowUpRightIcon from '../../svgs/arrow-up-right';
 
-export default function ProjectFeedSection(props) {
+interface ProjectFeedSectionProps {
+    type?: string;
+    elementId?: string;
+    colors?: string;
+    variant?: string;
+    title?: string;
+    subtitle?: string;
+    actions?: any[];
+    projects?: any[];
+    showDate?: boolean;
+    showDescription?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    styles?: any;
+}
+
+interface ProjectFeedActionsProps {
+    actions?: any[];
+    styles?: any;
+}
+
+interface ProjectFeedVariantsProps {
+    variant?: string;
+    projects?: any[];
+    showDate?: boolean;
+    showDescription?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    hasTopMargin?: boolean;
+}
+
+interface ProjectsVariantABCProps {
+    variant?: string;
+    projects?: any[];
+    showDate?: boolean;
+    showDescription?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    hasTopMargin?: boolean;
+}
+
+interface ProjectsVariantDProps {
+    projects?: any[];
+    showDate?: boolean;
+    showDescription?: boolean;
+    showFeaturedImage?: boolean;
+    showReadMoreLink?: boolean;
+    hasTopMargin?: boolean;
+}
+
+interface ProjectDateProps {
+    date: string;
+}
+
+export default function ProjectFeedSection(props: ProjectFeedSectionProps) {
     const {
         type,
         elementId,
@@ -44,7 +98,7 @@ export default function ProjectFeedSection(props) {
     );
 }
 
-function ProjectFeedActions(props) {
+function ProjectFeedActions(props: ProjectFeedActionsProps) {
     const { actions = [], styles = {} } = props;
     if (actions.length === 0) {
         return null;
@@ -60,7 +114,7 @@ function ProjectFeedActions(props) {
     );
 }
 
-function ProjectFeedVariants(props) {
+function ProjectFeedVariants(props: ProjectFeedVariantsProps) {
     const { variant = 'variant-a' } = props;
     switch (variant) {
         case 'variant-a':
@@ -74,7 +128,7 @@ function ProjectFeedVariants(props) {
     }
 }
 
-function ProjectsVariantABC(props) {
+function ProjectsVariantABC(props: ProjectsVariantABCProps) {
     const { variant = 'variant-a', projects = [], showDate, showDescription, showFeaturedImage, showReadMoreLink, hasTopMargin } = props;
     if (projects.length === 0) {
         return null;
@@ -122,7 +176,7 @@ function ProjectsVariantABC(props) {
     );
 }
 
-function ProjectsVariantD(props) {
+function ProjectsVariantD(props: ProjectsVariantDProps) {
     const { projects = [], showDate, showDescription, showFeaturedImage, showReadMoreLink, hasTopMargin } = props;
     if (projects.length === 0) {
         return null;
@@ -172,7 +226,7 @@ function ProjectsVariantD(props) {
     );
 }
 
-function ProjectDate({ date }) {
+function ProjectDate({ date }: ProjectDateProps) {
     const dateTimeAttr = dayjs(date).format('YYYY-MM-DD HH:mm:ss');
     const formattedDate = dayjs(date).format('MM-DD-YYYY');
     return <time dateTime={dateTimeAttr}>{formattedDate}</time>;

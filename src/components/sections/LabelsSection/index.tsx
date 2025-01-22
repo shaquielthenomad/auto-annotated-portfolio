@@ -5,8 +5,9 @@ import { Link } from '../../atoms';
 import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to-class-names';
 import Section from '../Section';
 import { Annotated } from '@/components/Annotated';
+import { LabelsSectionProps, LabelItemProps } from '@/types';
 
-export default function LabelsSection(props) {
+export default function LabelsSection(props: LabelsSectionProps) {
     const { type, elementId, colors, title, subtitle, items = [], styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
@@ -35,7 +36,7 @@ export default function LabelsSection(props) {
     );
 }
 
-function LabelItem(props) {
+function LabelItem(props: LabelItemProps) {
     const { label, url } = props;
     if (!label) {
         return null;

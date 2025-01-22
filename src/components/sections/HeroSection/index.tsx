@@ -36,7 +36,7 @@ export default function Component(props: HeroSection) {
     );
 }
 
-function HeroMedia({ media }) {
+function HeroMedia({ media }: { media: any }) {
     return <DynamicComponent {...media} />;
 }
 

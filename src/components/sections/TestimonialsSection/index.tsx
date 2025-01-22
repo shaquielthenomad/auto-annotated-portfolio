@@ -6,7 +6,40 @@ import { mapStylesToClassNames as mapStyles } from '../../../utils/map-styles-to
 import Section from '../Section';
 import ImageBlock from '../../molecules/ImageBlock';
 
-export default function TestimonialsSection(props) {
+interface Testimonial {
+    image?: any;
+    quote?: string;
+    name?: string;
+    title?: string;
+    styles?: {
+        name?: any;
+        title?: any;
+    };
+}
+
+interface TestimonialsSectionProps {
+    type?: string;
+    elementId?: string;
+    colors?: string;
+    variant?: string;
+    title?: string;
+    subtitle?: string;
+    testimonials?: Testimonial[];
+    styles?: any;
+}
+
+interface TestimonialVariantsProps {
+    variant?: string;
+    testimonials?: Testimonial[];
+    hasTopMargin?: boolean;
+}
+
+interface TestimonialsVariantProps {
+    testimonials?: Testimonial[];
+    hasTopMargin?: boolean;
+}
+
+export default function TestimonialsSection(props: TestimonialsSectionProps) {
     const { type, elementId, colors, variant, title, subtitle, testimonials, styles = {} } = props;
     return (
         <Section type={type} elementId={elementId} colors={colors} styles={styles.self}>
@@ -19,7 +52,7 @@ export default function TestimonialsSection(props) {
     );
 }
 
-function TestimonialVariants(props) {
+function TestimonialVariants(props: TestimonialVariantsProps) {
     const { variant = 'variant-a', ...rest } = props;
     switch (variant) {
         case 'variant-a':
@@ -33,7 +66,7 @@ function TestimonialVariants(props) {
     }
 }
 
-function TestimonialsVariantA(props) {
+function TestimonialsVariantA(props: TestimonialsVariantProps) {
     const { testimonials = [], hasTopMargin } = props;
     if (testimonials.length === 0) {
         return null;
@@ -72,7 +105,7 @@ function TestimonialsVariantA(props) {
     );
 }
 
-function TestimonialsVariantB(props) {
+function TestimonialsVariantB(props: TestimonialsVariantProps) {
     const { testimonials = [], hasTopMargin } = props;
     if (testimonials.length === 0) {
         return null;
@@ -118,7 +151,7 @@ function TestimonialsVariantB(props) {
     );
 }
 
-function TestimonialsVariantC(props) {
+function TestimonialsVariantC(props: TestimonialsVariantProps) {
     const { testimonials = [], hasTopMargin } = props;
     if (testimonials.length === 0) {
         return null;
