@@ -193,6 +193,9 @@ sections:
         label: CREATIVITY
       - type: Label
         label: STRATEGY
+      - type: Label
+        label: TRAVEL
+        url: ''
   - type: DividerSection
     styles:
       self:
