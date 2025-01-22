@@ -7,15 +7,44 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "paths": {
-      "@/types/*": ["./src/types/*"],
-      "@/types": ["./src/types"]
-    }
+      "@/types/*": [
+        "./src/types/*"
+      ],
+      "@/types": [
+        "./src/types"
+      ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
+      "@/components": [
+        "./src/components"
+      ]
+    },
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve"
   },
   "include": [
-    "next-env.d.ts", 
-    "**/*.ts", 
-    "**/*.tsx", 
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
     "src/types/*.ts",
     "src/types/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
