@@ -240,18 +240,14 @@ sections:
               - pr-0
       - type: FeaturedItem
         subtitle: 'Education:'
-        text: |-
-          **2015-2018**
+        text: >+
+          **2022-2025**
 
-          * ba computer sciense at a semi fancy school
 
-          **2014**
+          *   Bachelor of Business Administration (BBA), High Tech
+          Entrepreneurship,[ University of the Thai Chamber of
+          Commerce](https://utcc.ac.th)
 
-          * react certificate somewhere
-
-          **2011**
-
-          * my highschool
         styles:
           self:
             textAlign: left
