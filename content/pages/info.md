@@ -164,7 +164,7 @@ sections:
         styles:
           self:
             textAlign: left
-        title: Instagram
+        title: ''
         subtitle: '@shaquielthenomad'
     columns: 3
     spacingX: 120
