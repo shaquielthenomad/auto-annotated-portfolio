@@ -1,27 +1,27 @@
-import { Config, ContentObject, PostFeedLayout, PostLayout } from './generated';
+import { Config } from './generated';
 import { ComponentType } from 'react';
 
 export * from './base';
 export * from './generated';
 
-export interface PostFeedLayout {
+export type ContentObject = {
+  [key: string]: any;
+}
+
+export type PostFeedLayout = {
   posts: any[];
   showDate?: boolean;
   showAuthor?: boolean;
 }
 
-export interface PostLayout {
+export type PostLayout = {
   title: string;
   date: string;
   author?: string;
   content: string;
 }
 
-export interface ContentObject {
-  [key: string]: any;
-}
-
-export interface SVGComponentProps {
+export type SVGComponentProps = {
   className?: string;
   title?: string;
 }
