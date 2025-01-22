@@ -186,7 +186,7 @@ sections:
       - type: Label
         label: SEO
       - type: Label
-        label: Netlify
+        label: COMMUNICATION
       - type: Label
         label: Pancakes
       - type: Label
