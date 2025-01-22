@@ -125,6 +125,8 @@ sections:
           self:
             textAlign: left
         title: Linkedin
+        text: |
+          Shaquiel Sewell
       - type: FeaturedItem
         actions:
           - type: Link
