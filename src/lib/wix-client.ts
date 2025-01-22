@@ -1,8 +1,7 @@
 // src/lib/wix-client.ts
 import { createClient, WixClient } from '@wix/sdk';
-import { OAuthStrategy } from '@wix/sdk';
-import { stores } from '@wix/stores';
-import { site } from '@wix/site-stores';
+import { members } from '@wix/members';
+import { redirects } from '@wix/redirects';
 
 // Improved type safety for environment variables
 function getRequiredEnvVar(name: string): string {
@@ -17,16 +16,17 @@ function getRequiredEnvVar(name: string): string {
 function logEnvConfig(): void {
     if (process.env.NODE_ENV !== 'production') {
         console.log({
-            clientIdPresent: !!process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
-            siteIdPresent: !!process.env.NEXT_PUBLIC_WIX_SITE_ID,
-            apiKeyPresent: !!process.env.NEXT_PUBLIC_WIX_API_KEY,
-            accountIdPresent: !!process.env.NEXT_PUBLIC_WIX_ACCOUNT_ID
+            accessTokenPresent: !!process.env.WIX_ACCESS_TOKEN,
+            refreshTokenPresent: !!process.env.WIX_REFRESH_TOKEN
         });
     }
 }
 
 // Declare a variable to store the client
 let _wixClient: WixClient | null = null;
+
+type AccessToken = string;
+type RefreshToken = string;
 
 // Initialize Wix client with comprehensive error handling
 export function initializeWixClient(): WixClient {
@@ -37,19 +37,13 @@ export function initializeWixClient(): WixClient {
         logEnvConfig();
         
         _wixClient = createClient({
-            modules: [stores, site],
-            auth: OAuthStrategy({
-                clientId: getRequiredEnvVar('NEXT_PUBLIC_WIX_CLIENT_ID'),
-                tokens: {
-                    accessToken: getRequiredEnvVar('NEXT_PUBLIC_WIX_API_KEY'),
-                    refreshToken: getRequiredEnvVar('NEXT_PUBLIC_WIX_API_KEY')
-                }
-            }),
-            site: {
-                id: getRequiredEnvVar('NEXT_PUBLIC_WIX_SITE_ID')
+            modules: {
+                members,
+                redirects
             },
-            account: {
-                id: getRequiredEnvVar('NEXT_PUBLIC_WIX_ACCOUNT_ID')
+            auth: {
+                accessToken: getRequiredEnvVar('WIX_ACCESS_TOKEN') as AccessToken,
+                refreshToken: getRequiredEnvVar('WIX_REFRESH_TOKEN') as RefreshToken
             }
         });
 

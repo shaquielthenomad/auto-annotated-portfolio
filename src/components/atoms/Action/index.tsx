@@ -3,8 +3,22 @@ import classNames from 'classnames';
 import Link from '../Link';
 import { iconMap } from '../../svgs';
 import { Annotated } from '@/components/Annotated';
+import { SVGComponentProps } from '@/types';
 
-export default function Action(props) {
+interface ActionProps {
+  type: string;
+  elementId?: string;
+  className?: string;
+  label?: string;
+  altText?: string;
+  url?: string;
+  showIcon?: boolean;
+  icon?: keyof typeof iconMap;
+  iconPosition?: 'left' | 'right';
+  style?: 'primary' | 'secondary';
+}
+
+export default function Action(props: ActionProps) {
     const { type, elementId, className, label, altText, url, showIcon, icon, iconPosition = 'right', style = 'primary' } = props;
     const IconComponent = icon ? iconMap[icon] : null;
     return (

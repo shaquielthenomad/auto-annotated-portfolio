@@ -10,7 +10,7 @@ import { PAGE_MODEL_NAMES, PageModelType } from '@/types/generated';
 const contentBaseDir = 'content';
 const pagesBaseDir = contentBaseDir + '/pages';
 
-const allReferenceFields = {};
+const allReferenceFields: { [key: string]: boolean } = {};
 allModels.forEach((model) => {
     model.fields.forEach((field) => {
         if (field.type === 'reference' || (field.type === 'list' && field.items?.type === 'reference')) {
@@ -19,19 +19,19 @@ allModels.forEach((model) => {
     });
 });
 
-function isRefField(modelName: string, fieldName: string) {
+function isRefField(modelName: string, fieldName: string): boolean {
     return !!allReferenceFields[modelName + ':' + fieldName];
 }
 
 const supportedFileTypes = ['md', 'json'];
-function contentFilesInPath(dir: string) {
+function contentFilesInPath(dir: string): string[] {
     const globPattern = `${dir}/**/*.{${supportedFileTypes.join(',')}}`;
     return glob.sync(globPattern);
 }
 
 function readContent(file: string): types.ContentObject {
     const rawContent = fs.readFileSync(file, 'utf8');
-    let content = null;
+    let content: types.ContentObject = null;
     switch (path.extname(file).substring(1)) {
         case 'md':
             const parsedMd = frontmatter<Record<string, any>>(rawContent);
@@ -87,7 +87,7 @@ function resolveReferences(content: types.ContentObject, fileToContent: Record<s
     }
 }
 
-function contentUrl(obj: types.ContentObject) {
+function contentUrl(obj: types.ContentObject): string | undefined {
     const fileName = obj.__metadata.id;
     if (!fileName.startsWith(pagesBaseDir)) {
         console.warn('Content file', fileName, 'expected to be a page, but is not under', pagesBaseDir);
@@ -161,6 +161,28 @@ function annotateContentObject(o: any, prefix = '', depth = 0) {
     });
 }
 
-function deepClone(o: object) {
+function deepClone(o: object): object {
     return JSON.parse(JSON.stringify(o));
+}
+
+export function getFieldValue<T>(
+  model: Record<string, any>, 
+  field: string, 
+  defaultValue?: T
+): T | undefined {
+  if (!model || typeof model !== 'object') return defaultValue;
+  return model[field] as T ?? defaultValue;
+}
+
+export function resolveStaticProps(
+  contentObject: types.ContentObject, 
+  fieldName: string
+): string | undefined {
+  return contentObject && contentObject[fieldName] as string;
+}
+
+export function safelyGetFileName(filePath?: string): string | undefined {
+  if (!filePath) return undefined;
+  const parts = filePath.split('/');
+  return parts[parts.length - 1];
 }
