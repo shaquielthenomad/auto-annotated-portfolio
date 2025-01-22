@@ -178,7 +178,7 @@ sections:
     subtitle: 'Skills:'
     items:
       - type: Label
-        label: Leadership
+        label: LEADERSHIP
       - type: Label
         label: React
       - type: Label
