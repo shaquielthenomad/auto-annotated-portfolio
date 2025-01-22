@@ -73,7 +73,7 @@ sections:
       - type: ImageBlock
         url: /images/Notion logo.png
         altText: Notion
-        caption: Logo four
+        caption: Notion
       - type: ImageBlock
         url: /images/harbour.space.png
         altText: harbour.space
