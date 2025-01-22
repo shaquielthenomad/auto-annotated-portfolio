@@ -188,7 +188,7 @@ sections:
       - type: Label
         label: COMMUNICATION
       - type: Label
-        label: Pancakes
+        label: PPC
       - type: Label
         label: C++
       - type: Label
