@@ -13,11 +13,14 @@ sections:
   - elementId: ''
     colors: colors-f
     backgroundSize: full
-    text: >-
-      ## Hey I’m a developer. I’ve been born and raised in the world, and that’s
-      also where I’m based. I’m currently a free agent, ex-this, ex-that,
-      ex-super big name. When I’m not coding, writing or creating, I eat
-      cereals. I have a dog, check her out [@mygod](https://www.stackbit.com/).
+    text: >+
+      Hey, I’m Shaquiel. Born in South Africa, now based in Bangkok, I’m a
+      business strategist, marketer, and global explorer. I’ve worked with
+      brands worldwide, diving into everything from paid ads to data analytics.
+      When I’m not strategizing, I’m soaking in the views, learning new
+      languages, and building connections. Currently changing the world with
+      [@heypartner](https://heypartner.online).
+
     media:
       type: ImageBlock
       url: /images/about.jpg
