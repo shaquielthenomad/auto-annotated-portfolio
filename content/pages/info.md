@@ -16,8 +16,8 @@ sections:
     text: "## Hey, I’m Shaquiel. Born in South Africa \U0001F1FF\U0001F1E6, now based in Bangkok \U0001F1F9\U0001F1ED.\n\n## I’m a business strategist, marketer, and global explorer. \n\n## When I’m not strategizing, I’m soaking in the views, learning new languages, and building connections.\n\n## Currently changing the world with [@heypartner](https://heypartner.online).\n\n"
     media:
       type: ImageBlock
-      url: /images/Shaquiel Sewell.png
       altText: Shaquiel Sewell
+      url: /images/Picture of Shaquiel Sewell.png
     styles:
       self:
         height: auto
@@ -67,17 +67,18 @@ sections:
         altText: Yoco Payments
         caption: Yoco
       - type: ImageBlock
-        url: /images/bioplus-white-logo-header.png
+        url: /images/Panthera.png
         altText: Bioplus Energy
         caption: Bioplus
       - type: ImageBlock
-        url: /images/logo4.svg
-        altText: Logo four
-        caption: Logo four
+        url: /images/Notion logo.png
+        altText: Notion
+        caption: Notion
       - type: ImageBlock
-        url: /images/logo5.svg
-        altText: Logo five
-        caption: Logo five
+        url: /images/harbour.space.png
+        altText: harbour.space
+        caption: harbour.space
+        elementId: ''
     spacing: 3
     columns: 5
     aspectRatio: auto
