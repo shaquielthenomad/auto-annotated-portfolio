@@ -180,7 +180,7 @@ sections:
       - type: Label
         label: LEADERSHIP
       - type: Label
-        label: React
+        label: ANALYTICS
       - type: Label
         label: Microsoft Office
       - type: Label
