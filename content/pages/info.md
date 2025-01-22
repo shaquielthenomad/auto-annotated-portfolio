@@ -68,7 +68,7 @@ sections:
         caption: Yoco
       - type: ImageBlock
         url: /images/bioplus-white-logo-header.png
-        altText: Logo three
+        altText: Bioplus Energy
         caption: Logo three
       - type: ImageBlock
         url: /images/logo4.svg
