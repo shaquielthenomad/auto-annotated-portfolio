@@ -184,7 +184,7 @@ sections:
       - type: Label
         label: EMPATHY
       - type: Label
-        label: Next.js
+        label: SEO
       - type: Label
         label: Netlify
       - type: Label
