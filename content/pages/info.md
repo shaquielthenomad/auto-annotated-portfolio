@@ -182,7 +182,7 @@ sections:
       - type: Label
         label: ANALYTICS
       - type: Label
-        label: Microsoft Office
+        label: EMPATHY
       - type: Label
         label: Next.js
       - type: Label
