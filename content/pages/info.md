@@ -165,7 +165,7 @@ sections:
           self:
             textAlign: left
         title: ''
-        subtitle: '@shaquielthenomad'
+        subtitle: ''
     columns: 3
     spacingX: 120
     spacingY: 0
