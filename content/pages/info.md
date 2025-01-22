@@ -76,7 +76,7 @@ sections:
         caption: Logo four
       - type: ImageBlock
         url: /images/harbour.space.png
-        altText: altText of the image
+        altText: harbour.space
         caption: Caption of the image
         elementId: ''
     spacing: 3
